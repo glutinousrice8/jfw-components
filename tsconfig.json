@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.prod.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "noEmit": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "strictFunctionTypes": true,
+    "paths": {
+      "@jfw-designer/semi": [
+        "packages/semi/src/index.ts"
+      ]
+    }
+  }
+}
