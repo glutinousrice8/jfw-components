@@ -1,52 +1,23 @@
 {
-  "name": "@jfw-designer/semi",
-  "version": "0.1.0",
-  "description": "semi components for jfw designer",
-  "author": "",
-  "homepage": "",
-  "license": "MIT",
-  "main": "lib/cjs/index.js",
-  "module": "lib/esm/index.js",
-  "types": "lib/esm/index.d.ts",
-  "files": [
-    "dist",
-    "lib"
-  ],
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
+  "private": true,
+  "author": "glutinousrice8 <861063116@qq.com>",
   "scripts": {
-    "clean": "rimraf lib/ && rimraf dist/",
-    "build": "yarn clean && yarn build:esm && yarn build:cjs && yarn build:umd && yarn copy:less",
-    "build:esm": "tsc --project tsconfig.prod.json --outDir lib/esm/ --module ES2020",
-    "build:cjs": "tsc --project tsconfig.prod.json --outDir lib/cjs/ --module CommonJS",
-    "build:umd": "webpack --config webpack.config.js",
-    "serve": "webpack serve --config webpack.config.dev.js",
-    "copy:less": "yarn copy:less2esm && yarn copy:less2cjs && yarn copy:less2dist",
-    "copy:less2esm": "copyfiles -u 1 src/**/*.less lib/esm",
-    "copy:less2cjs": "copyfiles -u 1 src/**/*.less lib/cjs",
-    "copy:less2dist": "copyfiles -u 1 src/**/*.less dist",
-    "prepublishOnly": "yarn build"
-  },
-  "bugs": {
-    "url": ""
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "dev": "umi dev",
+    "build": "umi build",
+    "postinstall": "umi setup",
+    "setup": "umi setup",
+    "start": "npm run dev"
   },
   "dependencies": {
     "@douyinfe/semi-ui": "^2.44.0",
-    "@music163/formily": "^0.1.8",
     "@music163/foundation": "^0.1.4",
-    "@music163/tango-boot": "^0.1.2",
-    "@music163/tango-helpers": "^0.1.1",
-    "classnames": "^2.3.2",
-    "coral-system": "^1.0.6"
+    "@music163/tango-boot": "^0.2.1",
+    "@music163/tango-helpers": "^0.1.3",
+    "umi": "^4.0.83"
   },
   "devDependencies": {
     "@types/react": "^18.2.23",
-    "react": "^18.2.0"
+    "@types/react-dom": "^18.2.8",
+    "typescript": "^5.2.2"
   }
 }
